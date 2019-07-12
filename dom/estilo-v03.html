@@ -1,0 +1,67 @@
+<script src="https://unpkg.com/vue"></script>
+
+<style>
+    .caixas {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .demo{
+        width: 100px;
+        height: 100px;
+        background-color: gray;
+    }
+
+    .c1{
+        background-color: red;
+    }
+
+    .c2{
+        background-color: green;
+    }
+
+    .c3{
+        background-color: blue;
+    }
+
+    .girar {
+        transform: rotate(45deg);
+    }
+</style>
+
+<div id="app">
+    <div class="caixas">
+<!--        Aplicando atraves de uma propriedade Computada-->
+        <div class="demo" :class="estilo1"
+             @click="aplicarC1 = !aplicarC1"></div>
+        <div class="demo"></div>
+
+<!--        Aplicando através de chamada tipo array e chamando a classe girar com a propriedade-->
+        <div class="demo" :class="[classeCSS, {girar: aplicarGirar}]"></div>
+    </div>
+
+    <hr>
+
+<!--    Aqui ele aplica a propriedade atrves do input, usando o v-model pelo inputa, ele aplica o estilo desejado dinamicamente-->
+    <input type="text" v-model="classeCSS">
+
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            aplicarC1: false,
+            classeCSS: 'c1',
+            aplicarGirar: true
+        },
+        computed: {
+            estilo1(){
+                return{
+                    c1: this.aplicarC1,
+                    c2: !this.aplicarC1
+                }
+            }
+        }
+    })
+</script>
