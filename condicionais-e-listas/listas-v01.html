@@ -1,0 +1,23 @@
+<meta charset="UTF-8">
+<script src="https://unpkg.com/vue"></script>
+
+<div id="app">
+    <ul>
+        <!-- primeiro elemento é o nome que eu defino poderia ser teste in cores e dentro da tag usar: teste -->
+        <li v-for="lulu in cores" :teste="lulu">{{ lulu }}</li>
+    </ul>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            cores: ['vermelho', 'verde', 'amarelo', 'azul'],
+            pessoas: [
+                { nome: 'Ana', idade: 26, peso: 59 },
+                { nome: 'Guilherme', idade: 22, peso: 89 },
+                { nome: 'Vagner', idade: 34, peso: 100 }
+            ]
+        }
+    })
+</script>
