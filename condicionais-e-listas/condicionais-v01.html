@@ -3,10 +3,10 @@
 
 <div id="app">
     <p v-if="logado">Usuário Logado: {{ nome }}</p>
-<!--    O v-else só funciona quando o elemento anterior usa um v-if-->
+    <!--    O v-else só funciona quando o elemento anterior usa um v-if-->
     <p v-else>Nenhum usuário logado</p>
-<!-- Pode ser usado assim tambem ->
-<!--    <p v-if="!logado">Nenhum usuário logado</p>-->
+    <!-- Pode ser usado assim tambem ->
+    <!--    <p v-if="!logado">Nenhum usuário logado</p>-->
 
     <button @click="logado= !logado">
         {{ logado ? 'Sair' : 'Entrar'}}
